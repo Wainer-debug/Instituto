@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Instituto SchooolWay</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo" style="text-align: center"><i class="material-icons">cloud</i>Instituto ShcoolWay</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html"><i class="material-icons">search</i></a></li>
+                    <li><a href="badges.html"><i class="material-icons">view_module</i></a></li>
+                    <li><a href="collapsible.html"><i class="material-icons">refresh</i></a></li>
+                    <li><a href="mobile.html"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </h:head>
+    <h:body style="background-color: mintcream">
+        <div class="container">
+            <h:form>
+                <div class="row">  
+                    <h4 style="text-align: center; color: tomato">Datos del Alumno</h4>
+
+                    <div class="col s12"  style="padding-top: 45px">
+
+                        <h:inputText  id="vr_1" value="#{informacionSession.objAlum.nombreAlum}"   maxlength="20"/>
+                        <label for="vr_1">Ingresa tú nombre</label>
+
+                        <h:inputText  id="vr_2" value="#{informacionSession.objAlum.apellidoAlum}" maxlength="20"/>
+                        <label for="vr_2">Ahora tú apellido</label>
+
+                        <h:inputText  id="vr_3" value="#{informacionSession.objAlum.cedula}"  maxlength="20"/>
+                        <label for="vr_3">Dime tú número de identidicación (cédula de ciudadania)</label>
+
+                        <h:inputText  id="vr_4" value="#{informacionSession.objAlum.correo}"  maxlength="20"/>
+                        <label for="vr_4">Dime tú Correo Electronico</label>
+
+                        <h:inputText  id="vr_5" value="#{informacionSession.objAlum.telefono}"  maxlength="20"/>
+                        <label for="vr_5">Dime tú número de teléfono</label>
+
+                        <h:inputText  id="vr_6" value="#{informacionSession.objAlum.direccion}"  maxlength="20"/>
+                        <label for="vr_6">Ahora la dirección donde resides</label>
+
+                        <h:inputText  id="vr_7" value="#{informacionSession.objAlum.ocupacion}"  maxlength="20"/>
+                        <label for="vr_7">y para finalizar, dime tú ocupación</label>
+
+                        <h4 style="text-align: center; color: tomato">Información de Cursos Actuales</h4>
+                        <br></br>
+
+                        <div class="col s4">
+
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+
+                                    <img class="activator" src="images/cursos-de-ingles.jpg" alt=""/>
+
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Ingles Avanzado<i class="material-icons right">more_vert</i></span>
+                                    <p><a href="#"></a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Duración: 12 Meses<i class="material-icons right">close</i></span>
+                                    <p>En este curso dominaras por completo el idioma ingles, con una temática estricta y con los mejores tutores del pais. 
+                                        <br></br> <b>Fecha Inicio:</b> 12/10/2020 <br></br> <b>Fecha Fin:</b> 12/10/2021 <br></br> 
+                                        <b>Costo Matricula:</b> $100.000 <br></br> <b>Mensualidad:</b> $200.000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s4">
+
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+
+                                    <img class="activator" src="images/portugues.jfif" alt=""/>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Portugués Básico<i class="material-icons right">more_vert</i></span>
+                                    <p><a href="#"></a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Duración: 4 Meses<i class="material-icons right">close</i></span>
+                                    <p>Dominaras por completo el idioma portugués, con una temática estricta y con los mejores tutores del pais. 
+                                        <br></br> <b>Fecha Inicio:</b> 05/11/2020 <br></br> <b>Fecha Fin:</b> 05/03/2021 <br></br> 
+                                        <b>Costo Matricula:</b> $125.000 <br></br> <b>Mensualidad:</b> $300.000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s4">
+
+                            <div class="card">
+                                <div class="card-image waves-effect waves-block waves-light">
+
+                                    <img class="activator" src="images/frances-3.jpg" alt=""/>
+                                </div>
+                                <div class="card-content">
+                                    <span class="card-title activator grey-text text-darken-4">Francés Intermedio<i class="material-icons right">more_vert</i></span>
+                                    <p><a href="#"></a></p>
+                                </div>
+                                <div class="card-reveal">
+                                    <span class="card-title grey-text text-darken-4">Duración: 6 Meses<i class="material-icons right">close</i></span>
+                                    <p>En este curso dominaras por completo el idioma francés, con una tematica estricta y con los mejores tutores del pais. 
+                                        <br></br> <b>Fecha Inicio:</b> 12/12/2020 <br></br> <b>Fecha Fin:</b> 12/06/2021 <br></br> 
+                                        <b>Costo Matricula:</b> $300.000 <br></br> <b>Mensualidad:</b> $1.200.000</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br></br>
+                        <br></br>
+
+                        <h4 style="text-align: center; color: tomato">Inscribete al Curso que más te gusto !!!!</h4>
+
+                        <h:inputText  id="vr_9" value="#{informacionSession.objCurso.nombreCurso}"   maxlength="20"/>
+                        <label for="vr_9">Ingresa el nombre del curso que escojiste</label>
+
+                        <h:inputText  id="vr_10" value="#{informacionSession.objCurso.formaPago}" maxlength="20"/>
+                        <label for="vr_10">Ahora la forma de pago (tarjeta de crédito, efectivo o cheque)</label>
+
+                        <h:inputText  id="vr_11" value="#{informacionSession.objCurso.numCuotas}"  maxlength="20"/>
+                        <label for="vr_11">Y para finalizar, escoje tú plan de pago (1 - 2 o 3 Cuotas)</label>
+                    </div>
+                    <div class="col s12" style="margin-top:5%;text-align: center">
+                        <h:commandButton style="font-size: 26px; margin-left: 870px;" value="Registrar Información" actionListener="#{informacionSession.registrarInfo()}"/>
+                    </div>
+                </div>     
+            </h:form>
+        </div>
+        <div class="container">
+            <div class="row"> 
+                <div class="col s7">
+                    <table style="text-align: center" >
+                        <thead>
+                            <tr>
+                                <td>Nombre Alumno</td>
+                                <td>Apellido Alumno</td>
+                                <td>Cedula Ciudadania</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="#{informacionSession.listaAlum}" var="obj1" > 
+                                <tr>
+                                    <td>#{obj1.nombreAlum}</td>
+                                    <td>#{obj1.apellidoAlum}</td>
+                                    <td>#{obj1.cedula}</td>
+                                </tr>
+                            </c:forEach> 
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col s5">
+                    <table style="text-align: center">
+                        <thead>
+                            <tr>
+                                <td>Nombre del Curso</td>
+                                <td>Forma de Pago</td>
+                                <td>Número de Cuotas</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <c:forEach items="#{informacionSession.listaCurso}" var="obj2"> 
+                                <tr>
+                                    <td>#{obj2.nombreCurso}</td>
+                                    <td>#{obj2.formaPago}</td>
+                                    <td>#{obj2.numCuotas}</td>
+                                </tr>
+                            </c:forEach> 
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </h:body>
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Instituto SchoolWay</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2020 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+</html>

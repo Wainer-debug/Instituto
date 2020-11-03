@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:html5="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Instituto Loro</title>
+           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+<!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    </h:head>
+<h:body>
+       <h2 style="text-align: center">Instituto De Lenguas Loro</h2>
+        
+        <div class="container">
+            
+                <h:form>
+                  <div class="row">  
+                      <h4 style="text-align: center">Formulario De Inscripción</h4>
+                      
+                      <h5 style="text-align: center">Información Basica</h5>
+                      <div class="col s5"  style="padding-top: 65px">
+                        <label for="vr_1">Ingrese Su Nombre</label>
+                        <p:inputText  id="vr_1" value="#{indexController.alum.nombreAlumno}"   maxlength="20"/>
+                    
+                         <label for="vr_2">Ingrese Su Apellido</label>
+                        <p:inputText  id="vr_2" value="#{indexController.alum.apellidoAlumno}" maxlength="20"/>
+                        
+                   <label for="vr_3">Su Numero de cedula</label>
+                   <p:inputText  id="vr_3" value="#{indexController.alum.cedula}"  maxlength="20"/>
+                   
+                         
+                   <label for="vr_4">Correo Electronico</label>
+                   <p:inputText  id="vr_4" value="#{indexController.alum.correo}"  maxlength="20"/>
+                   
+                   <label for="vr_5">Dirección</label>
+                   <p:inputText  id="vr_5" value="#{indexController.alum.direccion}"  maxlength="20"/>
+                   
+                    <label for="vr_6">Ocupacion</label>
+                    <p:inputText  id="vr_6" value="#{indexController.alum.ocupacion}"  maxlength="20"/>
+                    
+                    <h5 style="text-align: center">Información de Curso</h5>
+                    
+                    <br></br>
+                    <label for="vr_7">Elija el tipo de Curso</label>
+                    <br></br>
+          <p:selectOneMenu id="vr_7" value="#{indexController.curs.nombreCurso}" dynamic="true" style="width:125px" >
+            <f:selectItem itemLabel="Elija Un Curso" itemValue=""/>
+            <f:selectItems value="#{lista.options}"  />
+          </p:selectOneMenu>
+
+                      <br></br><br></br>
+
+                      <h:commandButton style="color:#000000 " value="Ver descripcion del curso y fechas del curso" actionListener="#{indexController.cargarContenido()}" />
+                        
+                     <p:inputTextarea  id="vr_15" value="#{indexController.curs.contenido}"  maxlength="20" disabled="true"/>
+          
+                     <label for="vr_22" style="color:#000000">Fecha de Incio: #{indexController.curs.fechaInicio} </label>
+                     <label for="vr_23" style="color:#000000">Fecha de Fin: #{indexController.curs.fechaFin}</label>
+          <br></br>
+     <label for="vr_8">Elija la forma de pago</label>
+          <br></br>
+          <p:selectOneMenu id="vr_8" value="#{indexController.alum.formaPAgo}" dynamic="true" style="width:125px" >
+            <f:selectItem itemLabel="Forma de  Pago" itemValue=""/>
+            <f:selectItems value="#{lista.pagos}"  />
+        </p:selectOneMenu>
+           <br></br>
+     <label for="vr_9">Elija numero de cuotas del pago</label>
+          <br></br>
+          <p:selectOneMenu id="vr_9" value="#{indexController.alum.planPago}" dynamic="true" style="width:125px" >
+            <f:selectItem itemLabel="Numero de Cuotas" itemValue=""/>
+            <f:selectItems value="#{lista.coutas}"  />
+        </p:selectOneMenu>
+                    </div>
+                    <div class="col s12" style="margin-top:5%;text-align: center">
+                        <h:commandButton style="font-size:20px;margin-left: 70px ;color:#000000 " value="Guardar Inscripción" actionListener="#{indexController.guardarInformacion()}" class="weves-effect green accent-3 btn large"/>
+                        
+                     </div>
+                   </div>     
+                </h:form>
+            
+         
+  
+            <div class="row"> 
+           
+                    <div class="col s7">
+                        <table style="text-align: center" >
+        <thead>
+          
+            <tr>
+                      <td>Nombre</td>
+                      <td>Apellido </td>
+                      <td>Cedula</td>
+                      <td>Pago</td>
+                      <td>N° Cuotas</td>
+ 
+                 </tr>
+         </thead>
+            <tbody>
+  
+            <c:forEach items="#{indexController.listaAlum}" var="obl" > 
+
+                  <tr>
+                      <td>#{obl.nombreAlumno}</td>
+                      <td>#{obl.apellidoAlumno}</td>
+                      <td>#{obl.cedula}</td>
+                      <td>#{obl.formaPAgo}</td>
+                      <td>#{obl.planPago}</td>
+                  </tr>
+            </c:forEach> 
+
+        </tbody>
+      </table>
+                        </div>
+                 <div class="col s5">
+        <table>
+        <thead>
+          
+            <tr>
+                      <td>Tipo de Curso</td>
+                      <td>Duración</td>
+                      <td>fecha de inicio</td>
+                      <td>fecha de fin</td>
+
+
+                     
+                 </tr>
+         </thead>
+            <tbody>
+
+                <c:forEach items="#{indexController.listaCurso}" var="ob2"> 
+                  <tr>
+                      <td>#{ob2.nombreCurso}</td>
+                      <td>#{ob2.duracion}</td>
+                      <td>#{ob2.fechaInicio}</td>
+                      <td>#{ob2.fechaFin}</td>
+
+                  </tr>
+                    </c:forEach> 
+
+ 
+        </tbody>
+      </table>
+                        </div>
+                   </div> 
+            
+            
+            </div> 
+       
+<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </h:body>
+     
+</html>
